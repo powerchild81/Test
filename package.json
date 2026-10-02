@@ -1,0 +1,15 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A browser-playable Tic-Tac-Toe web application",
+  "type": "module",
+  "main": "src/ui.js",
+  "scripts": {
+    "test": "node tests/engine.test.js && node tests/ai.test.js",
+    "test:engine": "node tests/engine.test.js",
+    "test:ai": "node tests/ai.test.js",
+    "serve": "npx serve ."
+  },
+  "keywords": ["tic-tac-toe", "game", "web-app", "vanilla-js"],
+  "license": "MIT"
+}

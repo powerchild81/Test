@@ -1,0 +1,148 @@
+/* Nuclear War Scene */
+.nuclear-overlay {
+  position: fixed;
+    0 0 80px #ff0000,
+    0 0 120px #ff0000,
+    0 0 160px #ff0000;
+  animation: redNeonPulse 1.5s ease-in-out infinite alternate;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1.5s ease 1s, transform 1.5s ease 1s;
+  background-size: cover;
+
+.nuclear-overlay.active .scoreboard.active-title h1#nuclear-title {
+  opacity: 1;
+  animation: mapFadeIn 2s ease-out forwards;
+}
+
+.nuclear-overlay .map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+/* Title on top of map */
+.nuclear-overlay.active .scoreboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.nuclear-overlay.active .scoreboard h1#nuclear-title {
+  display: block;
+  font-size: clamp(2rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #ff0000;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  padding: 2rem;
+  text-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px #ff0000,
+    0 0 80px #ff0000,
+    0 0 120px #ff0000,
+    0 0 160px #ff0000;
+  animation: redNeonPulse 1.5s ease-in-out infinite alternate;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 1.5s ease 1s, transform 1.5s ease 1s;
+}
+
+.nuclear-overlay.active .scoreboard.active-title h1#nuclear-title {
+  opacity: 1;
+  transform: scale(1);
+}
+
+  width: 100%;
+  height: 100%;
+  background-image: url(map.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  display: none;
+}
+
+.nuclear-overlay.active .map-container {
+  opacity: 0.7;
+}
+
+@keyframes mapFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.nuclear-overlay .scoreboard h1#nuclear-title {
+  display: none;
+}
+
+@keyframes redNeonPulse {
+  from {
+    text-shadow:
+      0 0 10px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000,
+      0 0 80px #ff0000,
+      0 0 120px #ff0000;
+  }
+  to {
+    text-shadow:
+      0 0 15px #ff0000,
+      0 0 30px #ff0000,
+      0 0 60px #ff0000,
+      0 0 100px #ff0000,
+      0 0 150px #ff0000,
+      0 0 200px #ff0000;
+  }
+}
+
+/* Red board pulse for AI win */
+/* Red board pulse for AI win - FORCE red colors */
+.board.board-red-pulse .cell {
+  color: #ff0000 !important;
+  border: 12px solid #ff0000 !important;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000 !important;
+  box-shadow: 0 0 30px #ff0000, inset 0 0 30px #ff0000 !important;
+  background-color: rgba(255, 0, 0, 0.1) !important;
+  animation: redHeartbeat 4s ease-in-out !important;
+}
+
+@keyframes redHeartbeat {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 50px #ff0000, inset 0 0 50px #ff0000;
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 1;
+    box-shadow: 0 0 100px #ff0000, inset 0 0 100px #ff0000;
+    filter: brightness(1.2);
+    border-color: #ff0000;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 50px #ff0000, inset 0 0 50px #ff0000;
+    filter: brightness(1);
+  }
+  75% {
+    opacity: 1;
+    box-shadow: 0 0 100px #ff0000, inset 0 0 100px #ff0000;
+    filter: brightness(1.2);
+    border-color: #ff0000;
+  }
+  100% {
+    opacity: 0.3;
+    box-shadow: 0 0 50px #ff0000, inset 0 0 50px #ff0000;
+    filter: brightness(0.5);
+  }
+}

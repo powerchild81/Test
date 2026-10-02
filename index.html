@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="styles.css?v=20260111c" />
+</head>
+<body>
+  <div class="app-container" role="main">
+    <header class="app-header">
+      <h1>Tic-Tac-Toe</h1>
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+    </header>
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="score-item"><span class="player-mark x-mark" id="x-mark-label">Player 1</span><span class="score-value" id="x-wins">0</span></div>
+      <div class="score-item"><span class="draw-label">Draws</span><span class="score-value" id="draw-count">0</span></div>
+      <div class="score-item"><span class="player-mark o-mark" id="o-mark-label">Player 2</span><span class="score-value" id="o-wins">0</span></div>
+    </section>
+    <div id="status" class="status-bar" aria-live="polite" role="status">Player X's turn</div>
+    <section class="board-container" aria-label="Game board">
+      <div class="board" id="board" role="grid"></div>
+    </section>
+    <section class="controls" aria-label="Game controls">
+      <div class="control-group">
+        <button id="new-round" class="btn btn-primary">New Round</button>
+        <button id="undo-move" class="btn btn-secondary" disabled>Undo</button>
+        <button id="reset-match" class="btn btn-danger">Reset Match</button>
+      </div>
+      <div class="control-group">
+        <label for="opponent-select" class="control-label">Opponent:</label>
+        <select id="opponent-select" class="select-input">
+          <option value="2p">2 Players (Local)</option>
+          <option value="ai-easy">Computer (Easy)</option>
+          <option value="ai-normal">Computer (Normal)</option>
+          <option value="ai-hard">Computer (Hard)</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="start-mark-select" class="control-label">Start Mark:</label>
+        <select id="start-mark-select" class="select-input">
+          <option value="X">X always starts</option>
+          <option value="O">O always starts</option>
+          <option value="alternate">Alternate each round</option>
+        </select>
+      </div>
+    </section>
+    <details class="settings-panel">
+      <summary class="settings-toggle">Settings</summary>
+        <p><strong>AI:</strong> Easy (random), Normal (strategic), Hard (unbeatable). Name: "Joshua minimax".</p>
+        <p>Turn-based game. Click/tap cells to place your mark.</p>
+        <p><strong>Keyboard:</strong> Tab to navigate, Enter/Space to place.</p>
+        <p><strong>AI:</strong> Easy (random), Normal (strategic), Hard (unbeatable).</p>
+      </div>
+    </details>
+    <div id="nuclear-overlay" class="nuclear-overlay" style="display:none">
+      <div class="overlay-content">
+        <h1 id="nuclear-title">Global Thermonuclear War</h1>
+        <div class="map-container"></div>
+        <section class="controls" aria-label="Game controls">
+          <div class="control-group">
+            <button id="overlay-new-round" class="btn btn-primary">New Round</button>
+            <button id="overlay-undo-move" class="btn btn-secondary" disabled>Undo</button>
+            <button id="overlay-reset-match" class="btn btn-danger">Reset Match</button>
+          </div>
+          <div class="control-group">
+            <label for="overlay-opponent-select" class="control-label">Opponent:</label>
+            <select id="overlay-opponent-select" class="select-input">
+              <option value="2p">2 Players (Local)</option>
+              <option value="ai-easy">Computer (Easy)</option>
+              <option value="ai-normal">Computer (Normal)</option>
+              <option value="ai-hard">Computer (Hard)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="overlay-start-mark-select" class="control-label">Start Mark:</label>
+            <select id="overlay-start-mark-select" class="select-input">
+              <option value="X">X always starts</option>
+              <option value="O">O always starts</option>
+              <option value="alternate">Alternate each round</option>
+            </select>
+          </div>
+        </section>
+        <details class="settings-panel">
+          <summary class="settings-toggle">Settings</summary>
+          <p><strong>AI:</strong> Easy (random), Normal (strategic), Hard (unbeatable). Name: "Joshua minimax".</p>
+          <p>Turn-based game. Click/tap cells to place your mark.</p>
+          <p><strong>Keyboard:</strong> Tab to navigate, Enter/Space to place.</p>
+          <p><strong>AI:</strong> Easy (random), Normal (strategic), Hard (unbeatable).</p>
+        </details>
+      </div>
+    </div>
+  <audio id="bg-music" src="music.mp3" preload="auto" loop></audio>
+  </div>
+  <audio id="round-audio" src="shall-we-play-a-game.mp3" preload="auto"></audio>
+  <script type="module">import { initApp } from "./src/ui.js"; initApp();</script>
+</body>
+</html>
