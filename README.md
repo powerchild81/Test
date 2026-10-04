@@ -1,7 +1,7 @@
 # Tic-Tac-Toe in the style of War Games (1983) movie -Web Application
 
 A browser-playable implementation of the classic Tic-Tac-Toe (noughts and crosses) game. Built with vanilla HTML, CSS, and JavaScript.
-This is a tiny - creepy - crappy test for trying out Qwen models doing SSD on my workstation. Do not expect something decent here. Just measuring performance and reasoning levels
+This is a tiny - creepy - crappy test for trying out Qwen models doing SDD on my workstation. Do not expect something decent here. Just measuring performance and reasoning levels
 
 ## Features
 
